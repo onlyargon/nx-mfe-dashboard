@@ -1,0 +1,44 @@
+:root,
+.ui-theme {
+  --ui-font-body: 'Manrope', 'Avenir Next', 'Segoe UI', sans-serif;
+  --ui-font-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', serif;
+
+  --ui-color-ink: #1b2421;
+  --ui-color-ink-muted: #4c5b56;
+  --ui-color-brand: #137a6c;
+  --ui-color-brand-strong: #0b5a4f;
+  --ui-color-on-brand: #f7f5f0;
+  --ui-color-accent: #d28b2f;
+  --ui-color-surface: #f7f1e7;
+  --ui-color-surface-2: #efe7db;
+  --ui-color-surface-3: #ffffff;
+  --ui-color-border: #e1d6c7;
+
+  --ui-space-1: 4px;
+  --ui-space-2: 8px;
+  --ui-space-3: 12px;
+  --ui-space-4: 16px;
+  --ui-space-5: 20px;
+  --ui-space-6: 24px;
+  --ui-space-7: 28px;
+  --ui-space-8: 32px;
+  --ui-space-9: 40px;
+  --ui-space-10: 48px;
+  --ui-space-11: 56px;
+  --ui-space-12: 64px;
+
+  --ui-radius-s: 8px;
+  --ui-radius-m: 12px;
+  --ui-radius-l: 18px;
+  --ui-radius-xl: 24px;
+
+  --ui-shadow-1: 0 12px 30px rgba(27, 36, 33, 0.06);
+  --ui-shadow-2: 0 18px 40px rgba(27, 36, 33, 0.1);
+  --ui-shadow-3: 0 18px 40px rgba(11, 90, 79, 0.2);
+  --ui-shadow-4: 0 22px 50px rgba(11, 90, 79, 0.3);
+
+  --ui-transition-fast: 160ms ease;
+  --ui-transition-slow: 320ms ease;
+
+  --ui-sidebar-width: 264px;
+}

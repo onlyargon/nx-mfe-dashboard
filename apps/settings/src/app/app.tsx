@@ -1,11 +1,17 @@
-// Uncomment this line to use CSS modules
-// import styles from './app.module.css';
-import NxWelcome from './nx-welcome';
+import { useAuth } from '@intervest-mfe/auth-utils';
+import { Button } from '@intervest-mfe/shared-ui';
 
 export function App() {
+  const { logout } = useAuth();
+
   return (
     <div>
-      <NxWelcome title="settings" />
+      <h1>Settings</h1>
+      <div>
+        <Button variant="ghost" onClick={() => logout()}>
+          Logout
+        </Button>
+      </div>
     </div>
   );
 }
