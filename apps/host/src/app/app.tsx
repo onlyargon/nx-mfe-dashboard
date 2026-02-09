@@ -24,6 +24,10 @@ export function App() {
       return;
     }
     await login({ email: email.trim(), password });
+    setEmail('');
+    setPassword('');
+    setError(null);
+    navigate('/');
   };
 
   const navItems = [
