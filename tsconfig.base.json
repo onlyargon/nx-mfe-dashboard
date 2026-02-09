@@ -1,0 +1,28 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "workflows/Module": ["apps/workflows/src/remote-entry.ts"],
+      "analytics/Module": ["apps/analytics/src/remote-entry.ts"],
+      "settings/Module": ["apps/settings/src/remote-entry.ts"],
+      "reports/Module": ["apps/reports/src/remote-entry.ts"],
+      "@intervest-mfe/shared-ui": ["libs/shared-ui/src/index.ts"],
+      "@intervest-mfe/auth-utils": ["libs/auth-utils/src/index.ts"],
+      "@intervest-mfe/shared-types": ["libs/shared-types/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
