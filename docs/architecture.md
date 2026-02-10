@@ -6,6 +6,8 @@ Micro-Frontends (MFEs) at runtime. The Host provides the shell experience
 domain slice (analytics, workflows, settings, reports). The approach favors
 independent team delivery with controlled shared contracts and a consistent UX.
 
+Refer to the [README.md](../README.md) for setup and CLI commands.
+
 ## High-Level Diagram
 
 ```mermaid
