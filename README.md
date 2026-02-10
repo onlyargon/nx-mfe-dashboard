@@ -51,3 +51,5 @@ View the dependency graph
 ```bash
 npx nx graph
 ```
+
+Architecture overview can be found in the [architecture.md](docs/architecture.md) file.
