@@ -67,6 +67,19 @@ Entry points:
 - MFEs read auth state from context and call a shared auth client for refresh.
 - Route protection: Host enforces `RequireAuth` for protected routes.
 
+### Auth flow diagram
+
+```mermaid
+graph LR
+  A[Browser] --> B[Host]
+  B --> A
+  B --> C[Auth API]
+  C --> B
+  B --> E[MFEs]
+  B --> D[Auth Context]
+  D --> E[MFEs]
+```
+
 ## Team Independence (Build/Test/Deploy)
 
 - Each MFE builds and deploys as its own artifact with its own pipeline.
@@ -144,3 +157,63 @@ Rspack config:
 - Host: `apps/host/rspack.config.ts`
 - Host prod overrides: `apps/host/rspack.config.prod.ts`
 - Remotes: `apps/*/rspack.config.ts`
+
+## Tools and Frameworks
+
+### Nx: Build and dev orchestration
+
+Selected Nx mono repo over polyrepo because since there are only 4 teams and 4 remotes. Poly repo would be good if there are more than 10 teams and more than 10 remotes. Also Nx has a better support for monorepo and it is easier to manage the dependencies between the projects.
+
+### Rspack: Bundling and dev server
+
+Rspack is used for bundling and dev server because it is faster than webpack and it is easier to configure.
+
+### Module Federation: Remote application loading
+
+Module federation is selected over Single-spa or iframe because below features:
+
+- Native runtime sharing
+- Since shared dependencies, smaller bundle size
+- No framework overhead
+- No special implementation needed for communication between the host and the remotes
+
+## CI/CD Pipeline (per mfe)
+
+```yaml
+name: Deploy MFE
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Derive affected projects
+        run: npx nx affected:apps --base=origin/main~1
+
+      - name: Build affected MFEs
+        run: npx nx affected:build --base=origin/main~1
+
+      - name: Run affected tests
+        run: npx nx affected:test --base=origin/main~1
+
+      - name: Deploy to CDN
+        run: ./scripts/deploy-mfe.sh
+
+      - name: Update manifest
+        run: ./scripts/update-manifest.sh
+```
+
+### Deployment model
+
+```mermaid
+flowchart LR
+  A[Feature] --> B[Staging]
+  B --> C[Production]
+  B --> D[Canary]
+```
