@@ -1,5 +1,5 @@
 {
-  "name": "@intervest-mfe/shared-types",
+  "name": "@nx-mfe-demo/shared-types",
   "version": "0.0.1",
   "private": true,
   "type": "commonjs",

@@ -1,7 +1,7 @@
+import { AuthProvider } from '@nx-mfe-demo/auth-utils';
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from '@intervest-mfe/auth-utils';
 import App from './app/app';
 import './styles.css';
 

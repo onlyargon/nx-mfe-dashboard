@@ -1,5 +1,5 @@
-import { useAuth } from '@intervest-mfe/auth-utils';
-import { Button } from '@intervest-mfe/shared-ui';
+import { useAuth } from '@nx-mfe-demo/auth-utils';
+import { Button } from '@nx-mfe-demo/shared-ui';
 
 export function App() {
   const { logout } = useAuth();

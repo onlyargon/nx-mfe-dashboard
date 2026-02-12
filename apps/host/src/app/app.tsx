@@ -1,5 +1,5 @@
-import { RequireAuth, useAuth } from '@intervest-mfe/auth-utils';
-import { AppShell, Button, Card, PageHeader } from '@intervest-mfe/shared-ui';
+import { RequireAuth, useAuth } from '@nx-mfe-demo/auth-utils';
+import { AppShell, Button, Card, PageHeader } from '@nx-mfe-demo/shared-ui';
 import * as React from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import styles from './app.module.css';

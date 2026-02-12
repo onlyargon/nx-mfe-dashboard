@@ -1,4 +1,4 @@
-# IntervestMfe
+# nx-mfe Demo
 
 ## Running the project
 
@@ -21,7 +21,7 @@ View the project in the browser at http://localhost:4200
 This command creates the workspace
 
 ```bash
-npx create-nx-workspace@latest intervest-mfe --preset=apps
+npx create-nx-workspace@latest nx-mfe-demo --preset=apps
 ```
 
 This command creates the host application and the remotes.
